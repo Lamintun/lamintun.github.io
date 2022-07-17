@@ -4,10 +4,11 @@ String.prototype.filter = function (arr) {
 
     let result = this;
     for (let word of arr) {
+
         result = result.replace(word, '');
     }
 
-    return result;
+    return result.replace('  ', ' ');
 }
 
 let text = "This house is not nice!";
@@ -15,7 +16,7 @@ let bannedWords = ["not"];
 
 console.log("Original string : " + text);
 console.log("Banned words : " + bannedWords)
-console.log("Result : " + text.filter(['not']));
+console.log("Result : " + text.filter(bannedWords));
 
 ////////////////////////////////////////////////////////////////////////////////
 console.log("********************** Exercise 2 **********************")
@@ -92,7 +93,7 @@ let studentX = {
     greeting: function () {
         console.log("Hey, my name is " + this.name + " and I am studying " + this.major);
     },
-    __proto__ : personX
+    __proto__: personX
 }
 
 let professorX = {
@@ -100,7 +101,7 @@ let professorX = {
     greeting: function () {
         console.log("Hey, my name is " + this.name + " and I am in the " + this.department);
     },
-    __proto__ : personX
+    __proto__: personX
 }
 
 studentX.name = "Sundar";
